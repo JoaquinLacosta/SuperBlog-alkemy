@@ -1,10 +1,11 @@
 import React from "react"
+import { FooterWrapper } from "./styles"
 
 const Footer = () => {
   return(
-    <footer className="Footer">
-      <h2 className="Footer__title">Created by Joaquin Lacosta 🤍</h2>
-    </footer>
+    <FooterWrapper>
+      <h2>Created by Joaquin Lacosta 🤍</h2>
+    </FooterWrapper>
   )
 }
 
