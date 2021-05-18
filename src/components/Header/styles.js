@@ -9,7 +9,6 @@ export const HeaderWrapper = styled.header`
   align-items: center;
   background-color: #191716;
   color: white;
-  position: fixed;
 `
 
 export const HeaderLogo = styled.a`

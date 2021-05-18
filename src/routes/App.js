@@ -1,5 +1,5 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-import Home from "../containers/Home.js"
+import Home from "../containers/Home/index"
 
 
 const App = () => {

@@ -9,6 +9,6 @@ export const FooterWrapper = styled.footer`
   align-items: center;
   background-color: #191716;
   color: white;
-  position: absolute;
+  position: relative;
   bottom: 0;
 `
