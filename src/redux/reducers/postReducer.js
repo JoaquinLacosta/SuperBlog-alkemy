@@ -22,14 +22,13 @@ const blog_posts = (state = initialState, action) => {
       }
     }
     case EDIT_POST: {
-      let post = state.post.find(item => item.id === action.payload.id)
-      post = action.payload
+      const postIndex = state.posts[0].findIndex(item => item.id === action.payload.id)
+      state.posts[0][postIndex] = action.payload
 
       return {
         ...state,
         posts: [
-          ...state.posts,
-          post
+          ...state.posts
         ]
       }
     }

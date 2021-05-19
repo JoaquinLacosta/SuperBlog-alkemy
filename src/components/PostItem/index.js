@@ -26,6 +26,10 @@ const PostItem = (props) => {
     history.push(`/post/${id}`)
   }
 
+  const handleEdit = (id) => {
+    history.push(`/edit/post/${id}`)
+  }
+
   return(
     <PostArticle>
       <ArticleDiv>
@@ -42,7 +46,7 @@ const PostItem = (props) => {
             {FaTrash()}
           </i>
         </PostButton>
-        <PostButton edit>
+        <PostButton edit onClick={() => handleEdit(props.id)}>
           <i>
             {FaRegEdit()}
           </i>

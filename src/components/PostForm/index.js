@@ -26,7 +26,9 @@ const PostForm = (props) => {
       </InputContainer>
       <ButtonContainer>
         <Button type="submit">
-          Create post 
+          {
+            props.isEdit ? "Edit post" : "Create post"
+          }
         </Button>
       </ButtonContainer>
   </FormContainer>

@@ -18,7 +18,7 @@ export const add_post_action = (data) => {
 
 export const edit_post_action = (data) => {
   return {
-    type: DELETE_POST,
+    type: EDIT_POST,
     payload: data
   }
 }
