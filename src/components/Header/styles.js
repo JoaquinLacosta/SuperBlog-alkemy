@@ -11,17 +11,17 @@ export const HeaderWrapper = styled.header`
   color: white;
 `
 
-export const HeaderLogo = styled.a`
-  text-decoration: none;
-  color: white;
-  font-size: 32px;
-  font-weight: 700
-`
+export const HeaderLogo = {
+  "text-decoration": "none",
+  "color": "white",
+  "font-size": "32px",
+  "font-weight": "700"
+}
 
-export const HeaderButton = styled.a`
-  text-decoration: none;
-  color: white;
-  padding: 8px;
-  background-color: #3D348B;
-  border-radius: 5px
-`
+export const HeaderButton = {
+  "text-decoration": "none",
+  "color": "white",
+  "padding": "8px",
+  "background-color": "#3D348B",
+  "border-radius": "5px"
+}

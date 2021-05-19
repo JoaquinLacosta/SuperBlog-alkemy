@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import Loader from "../../components/Loader/index"
+import swal from "sweetalert"
 import { connect } from "react-redux"
 import { add_post_action } from "../../redux/actions/postActions"
 import axios from "axios"
@@ -15,7 +16,7 @@ const Home = (props) => {
         const { data } = res
         props.add_post_action(data)
       })
-      .catch(err => console.log(err))
+      .catch(err => swal("Error calling api", "Try again later", "error"))
   }, [])
 
   return(

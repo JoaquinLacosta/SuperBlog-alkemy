@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
+import swal from "sweetalert"
 import { delete_post_action } from "../../redux/actions/postActions"
 import axios from "axios"
 import { PostArticle, ArticleDiv, PostButton } from "./styles"
@@ -11,9 +12,10 @@ const PostItem = (props) => {
       .then(res => {
         if(res.status == 200) {
           props.delete_post_action(id)
+          swal("Succesfully deleted post", "", "success")
         }
       })
-      .catch(err => console.log(err))
+      .catch(err => swal("Error deleting post", "Try again later", "error"))
   }
 
   return(
