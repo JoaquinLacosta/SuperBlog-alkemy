@@ -5,12 +5,13 @@ import { add_post_action } from "../../redux/actions/postActions"
 import swal from "sweetalert"
 import Header from "../../components/Header/index"
 import Footer from "../../components/Footer/index"
-import { HomeContainer, FormContainer, InputContainer, Input, ButtonContainer, Button } from "./styles"
+import PostForm from "../../components/PostForm/index"
+import { HomeContainer } from "./styles"
 
 const CreatePost = (props) => {
   const [form, setForm] = useState({
     title: "",
-    description: "",
+    body: "",
     id: Math.random()
   })
 
@@ -38,33 +39,7 @@ const CreatePost = (props) => {
     <>
       <Header />
       <HomeContainer>
-        <FormContainer onSubmit={handleSubmit}>
-          <InputContainer>
-            <Input 
-              type="text" 
-              placeholder="Title" 
-              name="title" 
-              value={form.title}
-              onChange={handleChange}
-              required
-              minLength={5}
-              />
-            <Input 
-              type="text" 
-              placeholder="Description" 
-              name="description" 
-              value={form.description}
-              onChange={handleChange}
-              required
-              minLength={16}
-              />
-          </InputContainer>
-          <ButtonContainer>
-            <Button type="submit">
-              Create post 
-            </Button>
-          </ButtonContainer>
-        </FormContainer>
+        <PostForm form={form} handleChange={handleChange} handleSubmit={handleSubmit}/>
       </HomeContainer>
       <Footer />
     </>
