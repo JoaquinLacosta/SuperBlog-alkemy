@@ -13,7 +13,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/posts/create" component={CreatePost}/>
-          {/* <Route exact path="/post/:id" component={PostDetails}/> */}
+          <Route exact path="/post/:id" component={PostDetails}/>
         </Switch>
       </BrowserRouter>
     </Provider>
