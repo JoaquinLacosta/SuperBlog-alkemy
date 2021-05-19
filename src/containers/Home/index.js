@@ -11,7 +11,10 @@ import { HomeContainer } from "./styles.js"
 const Home = (props) => {
   useEffect(() => {
     axios("https://jsonplaceholder.typicode.com/posts")
-      .then(data => props.add_post_action(data.data))
+      .then(res => {
+        const { data } = res
+        props.add_post_action(data)
+      })
       .catch(err => console.log(err))
   }, [])
 
