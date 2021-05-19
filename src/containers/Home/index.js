@@ -11,14 +11,17 @@ import { HomeContainer } from "./styles.js"
 
 const Home = (props) => {
   useEffect(() => {
-    axios("https://jsonplaceholder.typicode.com/posts")
+    if(!props.blog_posts.length) {
+      axios("https://jsonplaceholder.typicode.com/posts")
       .then(res => {
         const { data } = res
         props.add_post_action(data)
       })
       .catch(err => swal("Error calling api", "Try again later", "error"))
+    }
   }, [])
 
+  const flatProps = props.blog_posts.flat()
   return(
     <>
       <Header />
@@ -26,7 +29,7 @@ const Home = (props) => {
         {
           typeof props.blog_posts[0] == "undefined" 
           ? <Loader />
-          : props.blog_posts[0].map(post => (
+          : flatProps.map(post => (
             <PostItem {...post} key={post.id} />
           ))
         }

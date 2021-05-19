@@ -12,16 +12,16 @@ export const HeaderWrapper = styled.header`
 `
 
 export const HeaderLogo = {
-  "text-decoration": "none",
-  "color": "white",
-  "font-size": "32px",
-  "font-weight": "700"
+  textDecoration: "none",
+  color: "white",
+  fontSize: "32px",
+  fontWeight: "700"
 }
 
 export const HeaderButton = {
-  "text-decoration": "none",
-  "color": "white",
-  "padding": "8px",
-  "background-color": "#3D348B",
-  "border-radius": "5px"
+  textDecoration: "none",
+  color: "white",
+  padding: "8px",
+  backgroundColor: "#3D348B",
+  borderRadius: "5px"
 }

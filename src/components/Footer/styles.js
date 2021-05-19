@@ -11,4 +11,5 @@ export const FooterWrapper = styled.footer`
   color: white;
   position: relative;
   bottom: 0;
+  font-size: 10px;
 `
