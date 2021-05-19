@@ -24,6 +24,7 @@ export const PostButton = styled.button`
   text-aling: center;
   font-size: 16px;
   color: white;
+  cursor: pointer;
   background-color: ${props => {
     if(props.remove) {
       return "#A22522"
