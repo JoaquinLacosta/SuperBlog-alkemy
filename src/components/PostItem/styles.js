@@ -9,8 +9,10 @@ export const PostArticle = styled.article`
   margin: 5px 0;
   border-bottom: 1px solid #bbbfb0;
   font-weight: 700;
+  transition: .2s;
   &:hover {
     box-shadow: 4px 4px 8px #bbbfb0;
+    transition: .2s;
   }
 `
 
