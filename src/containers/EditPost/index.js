@@ -16,7 +16,8 @@ const EditPost = (props) => {
     body: ""
   })
   const { id } = useParams()
-  const postData = props.blog_posts[0].find(i => i.id == id)
+  const flatData = props.blog_posts.flat()
+  const postData = flatData.find(i => i.id == id)
   useEffect(() => {
     setForm(postData)
   }, [])

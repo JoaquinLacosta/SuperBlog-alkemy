@@ -9,7 +9,7 @@ const blog_posts = (state = initialState, action) => {
     case DELETE_POST: {
       return {
         ...state,
-        posts: [state.posts[0].filter(item => item.id !== action.payload)]
+        posts: [state.posts.flat().filter(item => item.id !== action.payload)]
       }
     }
     case ADD_POST: {
@@ -22,13 +22,14 @@ const blog_posts = (state = initialState, action) => {
       }
     }
     case EDIT_POST: {
-      const postIndex = state.posts[0].findIndex(item => item.id === action.payload.id)
-      state.posts[0][postIndex] = action.payload
+      let postState = state.posts.flat()
+      const postIndex = postState.findIndex(item => item.id === action.payload.id)
+      postState[postIndex] = action.payload
 
       return {
         ...state,
         posts: [
-          ...state.posts
+          ...postState
         ]
       }
     }

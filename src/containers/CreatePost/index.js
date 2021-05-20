@@ -11,8 +11,7 @@ import { HomeContainer } from "./styles"
 const CreatePost = (props) => {
   const [form, setForm] = useState({
     title: "",
-    body: "",
-    id: Math.random()
+    body: ""
   })
 
   const handleSubmit = (e) => {
@@ -21,6 +20,7 @@ const CreatePost = (props) => {
       .then(res => {
         if(res.status === 201) {
           const { data } = res 
+          data.id = props.blog_posts.flat().length + 1
           props.add_post_action(data)
           swal("Post created succesfully!", "", "success")
         }
@@ -46,8 +46,14 @@ const CreatePost = (props) => {
   )
 }
 
+const mapStateToProps = (state) => {
+  return {
+    blog_posts: state.blog_posts.posts
+  }
+}
+
 const mapDispatchToProps = {
   add_post_action
 }
 
-export default connect(null, mapDispatchToProps)(CreatePost);
+export default connect(mapStateToProps, mapDispatchToProps)(CreatePost);

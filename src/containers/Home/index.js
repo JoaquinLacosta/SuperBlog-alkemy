@@ -20,7 +20,6 @@ const Home = (props) => {
       .catch(err => swal("Error calling api", "Try again later", "error"))
     }
   }, [])
-
   const lastPosts = props.blog_posts.flat()
     .sort((a, b) => b.id - a.id)
     .splice(0, 15)
