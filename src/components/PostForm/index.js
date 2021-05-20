@@ -1,5 +1,5 @@
 import React from "react"
-import { FormContainer, InputContainer, Input, ButtonContainer, Button } from "./styles"
+import { FormContainer, InputContainer, Input, TextArea, ButtonContainer, Button } from "./styles"
 
 const PostForm = (props) => {
   return(
@@ -14,8 +14,7 @@ const PostForm = (props) => {
           required
           minLength={5}
           />
-        <Input 
-          type="text" 
+        <TextArea
           placeholder="Body" 
           name="body" 
           value={props.form.body}

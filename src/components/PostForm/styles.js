@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const FormContainer = styled.form`
   min-width: 280px;
+  max-width: 768px;
   display: flex;
   padding: 20px;
   min-height: 300px;
@@ -22,10 +23,30 @@ export const InputContainer = styled.div`
 export const Input = styled.input`
   padding: 15px;
   margin: 5px;
-  border-radius: 5px;
-  border: none;
+  background-color: transparent;
   outline: none;
-  box-shadow: 4px 4px 8px #bbbfb0;
+  border: none;
+  border-bottom: 2px solid gray;
+  box-shadow: 0px 4px 8px #bbbfb0;
+  transition: .2s;
+  &:focus {
+    border-bottom: 2px solid rgb(61, 52, 139);
+  }
+`
+export const TextArea = styled.textarea`
+  padding: 15px;
+  margin: 5px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid gray;
+  box-shadow: 0px 4px 8px #bbbfb0;
+  transition: .2s;
+  resize: vertical;
+  max-height: 200px;
+  &:focus {
+    border-bottom: 2px solid rgb(61, 52, 139);
+  }
 `
 
 export const ButtonContainer = styled.div`
