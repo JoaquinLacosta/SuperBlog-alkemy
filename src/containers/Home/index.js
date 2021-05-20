@@ -21,15 +21,17 @@ const Home = (props) => {
     }
   }, [])
 
-  const flatProps = props.blog_posts.flat()
+  const lastPosts = props.blog_posts.flat()
+    .sort((a, b) => b.id - a.id)
+    .splice(0, 15)
   return(
     <>
       <Header />
       <HomeContainer>
         {
-          typeof props.blog_posts[0] == "undefined" 
+          typeof lastPosts == "undefined" 
           ? <Loader />
-          : flatProps.map(post => (
+          : lastPosts.map(post => (
             <PostItem {...post} key={post.id} />
           ))
         }
