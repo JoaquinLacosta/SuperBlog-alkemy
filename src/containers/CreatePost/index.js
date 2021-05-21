@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
+import { config } from "../../config"
 import { connect } from "react-redux"
 import { add_post_action } from "../../redux/actions/postActions"
 import swal from "sweetalert"
@@ -16,7 +17,7 @@ const CreatePost = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://jsonplaceholder.typicode.com/posts", form)
+    axios.post(config.API_LINK, form)
       .then(res => {
         if(res.status === 201) {
           const { data } = res 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
+import { config } from "../../config"
 import { edit_post_action } from "../../redux/actions/postActions"
 import { connect } from "react-redux"
 import Header from "../../components/Header/index"
@@ -31,7 +32,7 @@ const EditPost = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.patch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    axios.patch(config.API_LINK + id)
       .then(res => {
         if(res.status === 200) {
           props.edit_post_action(form)

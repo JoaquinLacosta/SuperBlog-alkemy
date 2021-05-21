@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
+import { config } from "../../config"
 import { useParams } from "react-router-dom"
 import axios from "axios"
 import Header from "../../components/Header/index"
@@ -16,7 +17,7 @@ const PostDetails = (props) => {
     if(postData) {
       setPost(postData)
     } else {
-      axios(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      axios(config.API_LINK + id)
       .then(res => {
         if(res.status === 200) {
           setPost(res.data)

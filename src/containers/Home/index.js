@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { config } from "../../config"
 import Loader from "../../components/Loader/index"
 import swal from "sweetalert"
 import { connect } from "react-redux"
@@ -12,7 +13,7 @@ import { HomeContainer } from "./styles.js"
 const Home = (props) => {
   useEffect(() => {
     if(!props.blog_posts.length) {
-      axios("https://jsonplaceholder.typicode.com/posts")
+      axios(config.API_LINK)
       .then(res => {
         const { data } = res
         props.add_post_action(data)
