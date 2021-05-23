@@ -23,11 +23,11 @@ const PostItem = (props) => {
   }
 
   const handleInfo = (id) => {
-    history.push(`/post/${id}`)
+    history.push(`/posts/${id}`)
   }
 
   const handleEdit = (id) => {
-    history.push(`/edit/post/${id}`)
+    history.push(`/posts/${id}/edit`)
   }
 
   return(
