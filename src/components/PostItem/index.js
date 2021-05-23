@@ -1,4 +1,5 @@
 import React from "react"
+import { config } from "../../config"
 import { useHistory } from "react-router-dom"
 import { connect } from "react-redux"
 import swal from "sweetalert"
@@ -12,7 +13,7 @@ const PostItem = (props) => {
 
 
   const handleRemove = (id) => {
-    axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    axios.delete(config.API_LINK + id)
       .then(res => {
         if(res.status === 200) {
           props.delete_post_action(id)
