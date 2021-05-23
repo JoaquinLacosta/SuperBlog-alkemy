@@ -4,8 +4,6 @@ import axios from "axios"
 import { config } from "../../config"
 import { edit_post_action } from "../../redux/actions/postActions"
 import { connect } from "react-redux"
-import Header from "../../components/Header/index"
-import Footer from "../../components/Footer/index"
 import PostForm from "../../components/PostForm/index"
 import Loader from "../../components/Loader/index"
 import { EditContainer } from "./styles"
@@ -47,7 +45,6 @@ const EditPost = (props) => {
 
   return(
     <>
-      <Header />
       <EditContainer>
         {
           typeof form === "undefined"
@@ -55,7 +52,6 @@ const EditPost = (props) => {
           : <PostForm form={form} handleChange={handleChange} handleSubmit={handleSubmit} isEdit/>
         }
       </EditContainer>
-      <Footer />
     </>
   )
 }

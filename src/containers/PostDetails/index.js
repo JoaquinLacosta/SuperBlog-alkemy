@@ -29,7 +29,6 @@ const PostDetails = (props) => {
 
   return(
     <>
-      <Header />
       <HomeContainer>
         {
           typeof post == "undefined" 
@@ -40,7 +39,6 @@ const PostDetails = (props) => {
           </PostContainer>
         }
       </HomeContainer>
-      <Footer />
     </>
   )
 }

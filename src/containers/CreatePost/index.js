@@ -4,8 +4,6 @@ import { config } from "../../config"
 import { connect } from "react-redux"
 import { add_post_action } from "../../redux/actions/postActions"
 import swal from "sweetalert"
-import Header from "../../components/Header/index"
-import Footer from "../../components/Footer/index"
 import PostForm from "../../components/PostForm/index"
 import { HomeContainer } from "./styles"
 
@@ -38,11 +36,9 @@ const CreatePost = (props) => {
 
   return(
     <>
-      <Header />
       <HomeContainer>
         <PostForm form={form} handleChange={handleChange} handleSubmit={handleSubmit}/>
       </HomeContainer>
-      <Footer />
     </>
   )
 }

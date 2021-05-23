@@ -5,8 +5,6 @@ import swal from "sweetalert"
 import { connect } from "react-redux"
 import { add_post_action } from "../../redux/actions/postActions"
 import axios from "axios"
-import Header from "../../components/Header/index"
-import Footer from "../../components/Footer/index"
 import PostItem from "../../components/PostItem/index"
 import { HomeContainer } from "./styles.js"
 
@@ -26,7 +24,6 @@ const Home = (props) => {
     .splice(0, 15)
   return(
     <>
-      <Header />
       <HomeContainer>
         {
           typeof lastPosts == "undefined" 
@@ -36,7 +33,6 @@ const Home = (props) => {
           ))
         }
       </HomeContainer>
-      <Footer />
     </>
   )
 }
